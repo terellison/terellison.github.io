@@ -1,7 +1,7 @@
 <footer class="footer">
   <a class="footer_item" href="https://www.buymeacoffee.com/terellison">Buy me a coffee</a>
-  <!-- <a class="footer_item" href="javascript::void(0)">resume</a> -->
-  <a class="footer_item" href="/feed.xml">rss</a>
+  <a class="footer_item" href="https://1drv.ms/b/s!AvJaT4VtP7XDgs8dIKoB0hA-p5pzSw?e=tqzp0Q">Resumé</a>
+  <a class="footer_item" href="/feed.xml">RSS</a>
   <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
   <small class="footer_copyright">
     <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
@@ -20,19 +20,14 @@
 <script src="/assets/js/main.js" defer="defer"></script>
 {%- if site.google_analytics -%}
   <!-- Google tag (gtag.js) -->
-  <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag("config", "{{ site.google_analytics }}");
-  </script>
+  gtag('config', "{{ site.google_analytics }}");
+</script>
 {%- endif -%}
 {%- if page.url == '/archive/' -%}
   <script src="/assets/js/search.min.js"></script>
