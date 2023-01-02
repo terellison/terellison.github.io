@@ -14,7 +14,7 @@ author:
   bio: >- # 
     Hello! I'm a software developer originating from St. Petersburg, Florida.
     Professionally, I currently specialize in bacekend .NET Core / Framework / Whatever Microsoft calls it as of the time you are reading this.
-    I'm very passionate about learning and often find myself falling down technical rabbit holes
+    I'm extremely passionate about learning and taking ownership of code.
   bio-short: >-
     Software developer who loves solving complex problems with robust and reliable solutions.
   username: terellison # general username
@@ -31,7 +31,7 @@ permalink: /:title/
 google_analytics: G-1YY1LGYC19
 #fb_appid:
 
-# Collection setting
+# Collection settings
 collections:
   posts:
     output: true
