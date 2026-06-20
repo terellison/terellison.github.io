@@ -1,0 +1,65 @@
+# =============================================================
+#  Experience, education & certifications (rendered on /about/).
+#  Sourced directly from Terry's resume + corrections he provided.
+#
+#  Each work/education item: period, role, org, and either
+#    - detail: a short paragraph, or
+#    - bullets: a list of specific accomplishments
+# =============================================================
+
+work:
+  - period: Feb 2025 — Present
+    role: Tools Software Engineer II
+    org: Electronic Arts · Orlando, FL
+    bullets:
+      - Developing tools and supporting developer workflows for an unannounced game project, supporting a team of 150+.
+      - Designed, implemented, and owned the project's code outsourcing pipeline — auditing the codebase, coordinating with teams across EA to determine code sharability, pre-building restricted code into DLLs, and authoring the technical documentation for external partners.
+      - Implementing developer-focused features across multiple domains in C++.
+      - Executing and supporting Frostbite engine upgrades.
+      - Building automation with Horde alongside internal toolsets.
+
+  - period: Oct 2021 — Jul 2024
+    role: Software Engineer
+    org: Microsoft (Contract) · Remote
+    bullets:
+      - Developed and maintained automated integration testing infrastructure for Unreal Engine.
+      - Validated Unreal Engine GDK updates against Unreal Engine 4 & 5, catching platform-specific bugs and runtime regressions (stutter, FPS drops, shader compile failures).
+      - Analyzed and debugged Unreal Engine runtime issues using WinDBG and internal tooling.
+      - Partnered with the HLSL team and Xbox Advanced Technology Group to identify and remediate breaking DirectX/GDK changes in Unreal Engine.
+      - Advised Microsoft FTEs on Azure best practices, reducing the team's cloud spend.
+
+  - period: Mar 2021 — Oct 2021
+    role: Application Developer
+    org: Tech Data Corporation · Remote
+    bullets:
+      - Built a Business-to-Business marketplace platform with full-stack web development.
+      - Led Scrum/Agile ceremonies and stood in for the lead developer on planning and progress reviews.
+      - Mentored an intern through the software development lifecycle and reported progress to management.
+
+  - period: Jan 2019 — Mar 2021
+    role: Junior Software Developer
+    org: Zeva Incorporated · Remote
+    bullets:
+      - Built full-stack web applications with ASP.NET Core, Telerik Controls, and Entity Framework.
+      - Automated end-to-end testing with Selenium and led development of containerized apps with Docker.
+      - Managed source control via Azure DevOps and led R&D for proof-of-concept projects.
+
+education:
+  - period: In Progress
+    role: B.S. Computer Science
+    org: Western Governors University
+
+  - period: Feb 2023
+    role: Certificate, Computer Science
+    org: Full Sail University
+
+  - period: Dec 2018
+    role: A.S., Computer Programming
+    org: St. Petersburg College
+    detail: >-
+      Tutored fellow students in computer programming and led the campus
+      Programming Club.
+
+certifications:
+  - name: Microsoft Certified — Azure Fundamentals
+    issuer: Microsoft

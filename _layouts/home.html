@@ -1,18 +1,84 @@
 ---
 layout: default
-home: true
+wide: true
 ---
 
-<p class="author-bio-short">{{ site.author.bio-short }}</p>
+<!-- ============ Hero ============ -->
+<section class="section hero">
+  <div class="hero__intro">
+    <p class="hero__status"><span class="dot"></span> Building tools at Electronic Arts</p>
+    <h1 class="hero__title">
+      Hi, I'm Terry —<br />I build tools for <span class="accent">game engines</span>.
+    </h1>
+    <p class="hero__lede">{{ site.author.bio-short }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ '/projects/' | relative_url }}">
+        View Projects {% include icon.html name="arrow-right" %}
+      </a>
+      <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">Read the Blog</a>
+      {%- for link in site.data.social -%}
+        {%- unless link.name == "RSS" -%}
+        <a class="icon-btn" href="{{ link.url }}" aria-label="{{ link.name }}"
+          {% unless link.url contains "mailto" %}target="_blank" rel="noopener"{% endunless %}>
+          {% include icon.html name=link.icon %}
+        </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <img class="hero__avatar" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" />
+</section>
 
-<hr/>
+<!-- ============ Featured projects ============ -->
+<section class="section">
+  <div class="section-head">
+    <h2>Featured Projects</h2>
+    <a class="section-link" href="{{ '/projects/' | relative_url }}">
+      All projects {% include icon.html name="arrow-right" %}
+    </a>
+  </div>
+  <div class="grid grid--2">
+    {%- for project in site.data.projects -%}
+      {%- if project.featured -%}
+        {% include project-card.html project=project %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
 
-<h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-{%- for post in site.posts limit: site.number_of_posts -%}
-<article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-  <h4 class="post-item-title">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
-  </h4>
-</article>
-{%- endfor -%}
+<!-- ============ Recent writing ============ -->
+{%- if site.posts.size > 0 -%}
+<section class="section">
+  <div class="section-head">
+    <h2>Recent Writing</h2>
+    <a class="section-link" href="{{ '/blog/' | relative_url }}">
+      All posts {% include icon.html name="arrow-right" %}
+    </a>
+  </div>
+  <div class="post-list">
+    {%- for post in site.posts limit: site.number_of_posts -%}
+      {% include post-card.html post=post %}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+<!-- ============ Skills ============ -->
+<section class="section">
+  <div class="section-head">
+    <h2>Tech Stack</h2>
+    <a class="section-link" href="{{ '/about/' | relative_url }}">
+      More about me {% include icon.html name="arrow-right" %}
+    </a>
+  </div>
+  <div class="skills-grid">
+    {%- for group in site.data.skills -%}
+    <div class="skill-group">
+      <div class="skill-group__label">{{ group.group }}</div>
+      <div class="tech-list">
+        {%- for item in group.items -%}<span class="tech-tag">{{ item }}</span>{%- endfor -%}
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>

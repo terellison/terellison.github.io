@@ -1,0 +1,30 @@
+{%- assign p = include.project -%}
+<article class="card card--link project-card">
+  <div class="project-card__top">
+    <span class="project-card__icon">{% include icon.html name="code" %}</span>
+    <span class="project-card__links">
+      {%- if p.stars -%}
+      <span class="project-card__star" title="{{ p.stars }} stars on GitHub">
+        {% include icon.html name="star" %}{{ p.stars }}
+      </span>
+      {%- endif -%}
+      {%- if p.repo -%}
+      <a href="{{ p.repo }}" target="_blank" rel="noopener" aria-label="{{ p.name }} on GitHub">
+        {% include icon.html name="github" %}
+      </a>
+      {%- endif -%}
+      {%- if p.demo -%}
+      <a href="{{ p.demo }}" target="_blank" rel="noopener" aria-label="{{ p.name }} live demo">
+        {% include icon.html name="external" %}
+      </a>
+      {%- endif -%}
+    </span>
+  </div>
+  <h3 class="project-card__title">{{ p.name }}</h3>
+  <p class="project-card__desc">{{ p.description }}</p>
+  {%- if p.tech -%}
+  <div class="tech-list">
+    {%- for t in p.tech -%}<span class="tech-tag">{{ t }}</span>{%- endfor -%}
+  </div>
+  {%- endif -%}
+</article>

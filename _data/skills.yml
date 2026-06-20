@@ -1,0 +1,16 @@
+# =============================================================
+#  Skills / tech stack (rendered on the homepage and /about/).
+#  Sourced directly from Terry's resume.
+# =============================================================
+
+- group: Languages & Frameworks
+  items: [C++, C#, C, Microsoft .NET, HLSL]
+
+- group: Game Engines & Graphics
+  items: [Unreal Engine, Frostbite, DirectX, Xbox Console Development]
+
+- group: Cloud & DevOps
+  items: [Microsoft Azure, Azure DevOps Pipelines, Jenkins, Containerization, Docker, Perforce]
+
+- group: Debugging & Tooling
+  items: [WinDBG, LLDB, Selenium, Entity Framework]

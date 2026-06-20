@@ -1,0 +1,106 @@
+// ---- Layout & structure -------------------------------------
+.wrapper {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  &.wrapper--wide {
+    max-width: $wide-width;
+  }
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 3.5rem 0 4.5rem;
+
+  @include media($bp-md) {
+    padding: 2.25rem 0 3rem;
+  }
+}
+
+// Section rhythm
+.section {
+  margin: 4.5rem 0;
+
+  @include media($bp-md) {
+    margin: 3rem 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 0;
+    font-size: $step-2;
+  }
+}
+
+.section-link {
+  font-size: $step--1;
+  font-weight: 550;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.15s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(2px);
+  }
+}
+
+// Generic grid
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @include media($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Page header (non-home pages)
+.page-header {
+  margin-bottom: 2.5rem;
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header__lede {
+    font-size: $step-1;
+    color: var(--text-muted);
+    max-width: 38ch;
+  }
+}

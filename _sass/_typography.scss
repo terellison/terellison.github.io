@@ -1,0 +1,95 @@
+// ---- Base typography ----------------------------------------
+body {
+  font-family: $font-sans;
+  font-size: $step-0;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.6em;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+h1 {
+  font-size: $step-4;
+}
+h2 {
+  font-size: $step-3;
+}
+h3 {
+  font-size: $step-2;
+}
+h4 {
+  font-size: $step-1;
+}
+
+p {
+  margin: 0 0 1.2em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+
+strong {
+  font-weight: 650;
+}
+
+small {
+  font-size: $step--1;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-mono;
+  font-size: 0.9em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+::placeholder {
+  color: var(--text-faint);
+}
+
+.eyebrow {
+  font-size: $step--1;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.mono {
+  font-family: $font-mono;
+}

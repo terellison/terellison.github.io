@@ -1,94 +1,62 @@
 ---
-layout: compress
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="article-header">
+    <div class="article-header__meta">
+      <span>{% include icon.html name="calendar" %}
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+      </span>
+      {%- assign words = content | strip_html | number_of_words -%}
+      <span class="sep">·</span>
+      <span>{% include icon.html name="clock" %} {{ words | divided_by: 200 | plus: 1 }} min read</span>
+    </div>
 
-{% include header.html %}
+    <h1 class="article-header__title" itemprop="headline">{{ page.title | escape }}</h1>
 
-<body data-theme="{{ site.mode }}" class="notransition">
+    {%- if page.description -%}
+    <p class="page-header__lede">{{ page.description }}</p>
+    {%- endif -%}
 
-  <script>
-    const body = document.body;
-    const data = body.getAttribute("data-theme");
+    {%- if page.tags and page.tags != empty -%}
+    <div class="article-header__tags">
+      {%- for tag in page.tags -%}
+      {%- assign tag_slug = tag | slugify -%}
+      <a class="tag-pill" href="{{ '/tags/' | append: '#' | append: tag_slug | relative_url }}">{{ tag }}</a>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+  </header>
 
-    const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
-      } else {
-        localStorage.setItem("theme", data);
-      }
-    };
- 
-    initTheme(localStorage.getItem("theme"));
-    
-    setTimeout(() => body.classList.remove("notransition"), 75);
-  </script>
-
-  {% include navbar.html %}
-  <div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-      <article itemscope itemtype="https://schema.org/BlogPosting">
-
-        <header class="header">
-          {% if page.tags and page.tags != empty %}
-          <div class="tags">
-            {% assign tags = page.tags %}
-            <span itemprop="keywords">
-              {% for tag in tags %}
-              <a class="tag"
-                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
-              {% endfor %}
-            </span>
-          </div>
-          {% endif %}
-          <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-          {% if page.date %}
-          <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%b %d, %Y" }}
-            </time>
-            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name">{{ site.author.name }}</span>
-            </span>
-            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.date | date: "%b %d, %Y" }}
-            </time>
-            <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
-            <span hidden itemprop="image">{{ page.image }}</span>
-            <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
-          </div>
-          {% endif %}
-        </header>
-
-        <div class="page-content" itemprop="articleBody">
-          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
-          {% if page.tweet %}
-          <p>Comments this article on 
-            <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
-          </p>
-          {% endif %}
-        </div>
-      </article>
-    
-      {% if page.comments %}
-        {% include comments.html %}
-      {% endif %}
-
-    </main>
-
-    {% if page.modified %}
-      <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
-    {% endif %}
-    {% if page.next or page.previous %}
-      {% include navigation.html %}
-    {% endif %}
-
-    {% include footer.html %}
+  <div class="prose" itemprop="articleBody">
+    {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=2 h_max=4 %}
   </div>
-</body>
 
-</html>
+  <footer class="post-foot">
+    <p class="text-muted">
+      Thanks for reading. Found a typo or want to discuss?
+      <a href="mailto:{{ site.author.email }}">Get in touch</a> or
+      <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">find me on GitHub</a>.
+    </p>
+
+    {%- if page.previous or page.next -%}
+    <nav class="post-nav" aria-label="Post navigation">
+      {%- if page.previous -%}
+      <a class="post-nav--prev" href="{{ page.previous.url | relative_url }}">
+        <span>← Previous</span>
+        <strong>{{ page.previous.title | escape }}</strong>
+      </a>
+      {%- else -%}<span></span>{%- endif -%}
+      {%- if page.next -%}
+      <a class="post-nav--next" href="{{ page.next.url | relative_url }}">
+        <span>Next →</span>
+        <strong>{{ page.next.title | escape }}</strong>
+      </a>
+      {%- endif -%}
+    </nav>
+    {%- endif -%}
+  </footer>
+</article>
