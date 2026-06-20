@@ -1,16 +1,16 @@
 # =============================================================
 #  Skills / tech stack (rendered on the homepage and /about/).
-#  Grouped by category. Inferred from project history — edit freely.
+#  Sourced directly from Terry's resume.
 # =============================================================
 
-- group: Languages
-  items: [C#, C++, Python, JavaScript, Rust, Lua, Java, SQL]
+- group: Languages & Frameworks
+  items: [C++, C#, C, Microsoft .NET, HLSL]
 
-- group: .NET Ecosystem
-  items: [.NET Core, .NET Framework, ASP.NET, .NET MAUI, WinForms, Entity Framework]
+- group: Game Engines & Graphics
+  items: [Unreal Engine, Frostbite, DirectX, Xbox Console Development]
 
-- group: Platforms & Tooling
-  items: [Win32 API, DirectX 12, Node.js, Git, Docker, Linux]
+- group: Cloud & DevOps
+  items: [Microsoft Azure, Azure DevOps Pipelines, Jenkins, Containerization, Docker, Perforce]
 
-- group: Practices
-  items: [Backend Services, REST APIs, Data Structures, Code Ownership, Testing]
+- group: Debugging & Tooling
+  items: [WinDBG, LLDB, Selenium, Entity Framework]

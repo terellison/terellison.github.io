@@ -1,54 +1,65 @@
 # =============================================================
-#  Experience & education timelines (rendered on /about/).
+#  Experience, education & certifications (rendered on /about/).
+#  Sourced directly from Terry's resume + corrections he provided.
 #
-#  Sources: St. Petersburg College's public profile of Terry
-#  Ellison + LinkedIn headline. LinkedIn blocks automated access,
-#  so a few specifics are marked TODO — please confirm/fill in:
-#    - EA Sports: exact job title and start date
-#    - Microsoft/Xbox: employment date range
-#    - Whether Full Sail / FIU belong here (see commented entries)
-#
-#  Each item: period, role, org, detail (optional)
+#  Each work/education item: period, role, org, and either
+#    - detail: a short paragraph, or
+#    - bullets: a list of specific accomplishments
 # =============================================================
 
 work:
-  - period: Present # TODO: confirm start year, e.g. "2021 — Present"
-    role: Software Engineer # TODO: confirm exact title at EA Sports
-    org: EA Sports (Electronic Arts)
-    detail: >-
-      Working on game engine development and testing, alongside backend
-      services across the .NET ecosystem (C# / .NET Core / .NET Framework).
+  - period: Feb 2025 — Present
+    role: Tools Software Engineer II
+    org: Electronic Arts · Orlando, FL
+    bullets:
+      - Developing tools and supporting developer workflows for an unannounced game project, supporting a team of 100+.
+      - Implementing gameplay features across multiple domains in C++.
+      - Executing and supporting Frostbite engine upgrades.
+      - Building automation with Jenkins alongside internal toolsets.
+      - Coordinating with teams across Electronic Arts on cross-cutting workflow features.
 
-  - period: 2019 # TODO: confirm date range
-    role: Software Test Engineer (Contractor)
-    org: Microsoft · Xbox Game Development
-    detail: >-
-      Validated new titles on the Xbox game development team — writing
-      programs that automatically exercised games, in addition to hands-on
-      manual QA.
+  - period: Oct 2021 — Jul 2024
+    role: Software Engineer
+    org: Microsoft (Contract) · Remote
+    bullets:
+      - Developed and maintained automated integration testing infrastructure for Unreal Engine.
+      - Validated Unreal Engine GDK updates against Unreal Engine 4 & 5, catching platform-specific bugs and runtime regressions (stutter, FPS drops, shader compile failures).
+      - Analyzed and debugged Unreal Engine runtime issues using WinDBG and internal tooling.
+      - Partnered with the HLSL team and Xbox Advanced Technology Group to identify and remediate breaking DirectX/GDK changes in Unreal Engine.
+      - Advised Microsoft FTEs on Azure best practices, reducing the team's cloud spend.
+
+  - period: Mar 2021 — Oct 2021
+    role: Application Developer
+    org: Tech Data Corporation · Clearwater, FL
+    bullets:
+      - Built a Business-to-Business marketplace platform with full-stack web development.
+      - Led Scrum/Agile ceremonies and stood in for the lead developer on planning and progress reviews.
+      - Mentored an intern through the software development lifecycle and reported progress to management.
+
+  - period: Jan 2019 — Mar 2021
+    role: Junior Software Developer
+    org: Zeva Incorporated · Remote
+    bullets:
+      - Built full-stack web applications with ASP.NET Core, Telerik Controls, and Entity Framework.
+      - Automated end-to-end testing with Selenium and led development of containerized apps with Docker.
+      - Managed source control via Azure DevOps and led R&D for proof-of-concept projects.
 
 education:
-  - period: 2018
-    role: A.S., Computer Programming and Analysis
+  - period: In Progress
+    role: B.S. Computer Science # TODO: confirm exact program name at WGU
+    org: Western Governors University
+
+  - period: Awarded after leaving the program
+    role: Certificate, Computer Science
+    org: Full Sail University
+
+  - period: Dec 2018
+    role: A.S., Computer Programming
     org: St. Petersburg College
     detail: >-
-      Graduated December 2018. Served as a Computer Programming Tutor and
-      led the Programming Club, organizing meetings and lectures for CS
-      students.
+      Tutored fellow students in computer programming and led the campus
+      Programming Club.
 
-  # The two entries below are INFERRED from GitHub repo history
-  # (Full Sail lab projects in 2022; FIU course codes in 2024) and are
-  # NOT yet verified. Uncomment and edit if they're accurate, or delete.
-  #
-  # - period: 2024 — Present
-  #   role: Computer Science
-  #   org: Florida International University
-  #   detail: >-
-  #     Coursework in data structures, algorithms, and discrete mathematics.
-  #
-  # - period: 2022
-  #   role: Software & Game Development
-  #   org: Full Sail University
-  #   detail: >-
-  #     Systems and graphics programming in C++ — DirectX 12, Unreal Engine,
-  #     and low-level Windows development.
+certifications:
+  - name: Microsoft Certified — Azure Fundamentals
+    issuer: Microsoft

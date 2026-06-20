@@ -1,8 +1,8 @@
 # ======================= Site settings =======================
 title: Terry Ellison
 description: >-
-  Portfolio and technical blog of Terry Ellison — a software developer
-  focused on backend .NET and dependable systems.
+  Portfolio and technical blog of Terry Ellison — a tools & engine software
+  engineer working in game development.
 lang: en-US
 timezone: America/New_York
 repo: https://github.com/terellison/terellison.github.io
@@ -15,13 +15,16 @@ mode: light
 author:
   name: Terry Ellison
   bio: >-
-    Hello! I'm a software developer from St. Petersburg, Florida. I currently
-    specialize in backend development across the .NET ecosystem — C#, .NET Core,
-    and .NET Framework. I'm passionate about learning, clean design, and taking
+    Hello! I'm a software engineer originally from St. Petersburg, Florida.
+    I'm currently a Tools Software Engineer at Electronic Arts, building
+    developer tools and workflows for game teams. My background spans Unreal
+    Engine and Frostbite tooling, Xbox platform development, and full-stack
+    work across the .NET ecosystem. I'm passionate about learning and taking
     full ownership of the code I ship.
   bio-short: >-
-    Backend-focused software developer who loves solving complex problems with
-    robust, reliable solutions.
+    Tools & engine software engineer building developer workflows for game
+    teams, with a background spanning Unreal Engine, Xbox platforms, and
+    full-stack .NET.
   username: terellison
   github: terellison
   email: ellisonterry4@gmail.com
