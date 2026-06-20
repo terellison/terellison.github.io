@@ -1,63 +1,86 @@
-// Fonts preferences
-$sans-family: Roboto, sans-serif;
-$mono-family: Consolas, monospace;
-$base-font-size: 16px;
-$medium-font-size: $base-font-size * 0.938;
-$small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.85;
+// =============================================================
+//  Design system entry point
+//  Clean & minimal · light/dark via CSS custom properties
+// =============================================================
 
-// Font weight
-// $light-weight: 300; // uncomment if necessary
-$normal-weight: 400;
-$bold-weight: 700;
-// $black-weight: 900; // uncomment if necessary
+// ---- Design tokens (Sass) -----------------------------------
+$font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif;
+$font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+  Consolas, "Liberation Mono", monospace;
 
-//Light Colors
-$text-base-color: #434648;
-$text-link-blue: #003fff;
-$text-link-blue-active: #0036c7;
+$content-width: 760px;
+$wide-width: 1080px;
 
-$black: #0d122b;
-$light: #ececec;
-$smoke: #d2c7c7;
-$gray: #6b7886;
-$white: #fff;
+$step--1: 0.875rem;
+$step-0: 1rem;
+$step-1: 1.25rem;
+$step-2: 1.563rem;
+$step-3: 1.953rem;
+$step-4: 2.441rem;
+$step-5: 3.052rem;
 
-// Dark Colors
-$dark-text-base-color: #c7bebe;
-$dark-text-link-blue: #ff5277;
-$dark-text-link-blue-active: #ff2957;
+$radius: 10px;
+$radius-sm: 6px;
+$radius-lg: 16px;
 
-$dark-black: #131418;
-$dark-white: #eaeaea;
-$dark-light: #1b1d25;
-$dark-smoke: #4a4d56;
-$dark-gray: #767f87;
+// Breakpoints
+$bp-sm: 540px;
+$bp-md: 768px;
+$bp-lg: 1024px;
 
-// Width of the content area
-$wide-size: 890px;
-$narrow-size: 720px;
-
-// Padding unit
-$spacing-full: 30px;
-$spacing-half: $spacing-full / 2;
-
-// State of devices
-$on-mobile: 768px;
-$on-tablet: 769px;
-$on-desktop: 1024px;
-$on-widescreen: 1152px;
-
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
+@mixin media($max) {
+  @media screen and (max-width: $max) {
     @content;
   }
 }
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+// ---- Theme variables ----------------------------------------
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f7f7f8;
+  --surface: #ffffff;
+  --surface-hover: #f3f4f6;
+  --text: #18181b;
+  --text-muted: #5c5f66;
+  --text-faint: #8a8f98;
+  --border: #e7e8ea;
+  --border-strong: #d4d6da;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --code-bg: #f5f6f8;
+  --code-text: #24292f;
+  --selection: rgba(79, 70, 229, 0.18);
+  --shadow: 0 1px 2px rgba(17, 18, 22, 0.04),
+    0 4px 16px rgba(17, 18, 22, 0.06);
+  --shadow-lg: 0 8px 30px rgba(17, 18, 22, 0.12);
 }
 
-// Import sass files
-@import "klise/fonts", "klise/base", "klise/layout", "klise/post",
-  "klise/miscellaneous", "klise/syntax", "klise/dark";
+[data-theme="dark"] {
+  --bg: #0b0c0f;
+  --bg-subtle: #121319;
+  --surface: #15161c;
+  --surface-hover: #1d1f27;
+  --text: #e8e9ec;
+  --text-muted: #a1a4ad;
+  --text-faint: #6e727c;
+  --border: #24262e;
+  --border-strong: #33363f;
+  --accent: #818cf8;
+  --accent-hover: #a5b0ff;
+  --accent-soft: rgba(129, 140, 248, 0.14);
+  --code-bg: #15161c;
+  --code-text: #c9d1d9;
+  --selection: rgba(129, 140, 248, 0.26);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+@import "reset";
+@import "typography";
+@import "layout";
+@import "nav";
+@import "components";
+@import "prose";
+@import "syntax";

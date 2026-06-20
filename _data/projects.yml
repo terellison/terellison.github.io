@@ -1,0 +1,77 @@
+# =============================================================
+#  Projects shown on /projects/ and (when featured) the homepage.
+#  Sourced from github.com/terellison — edit freely.
+#
+#  Fields:
+#    name        – display name
+#    description – one or two sentences
+#    tech        – list of languages/frameworks (shown as tags)
+#    repo        – GitHub URL (optional)
+#    demo        – live demo / homepage URL (optional)
+#    stars       – GitHub star count (optional, shown as a badge)
+#    featured    – true to surface on the homepage
+# =============================================================
+
+- name: NVUpdateManager
+  description: >-
+    An enterprise application suite for managing NVIDIA Game Ready Driver
+    updates without GeForce Experience — handling detection, download, and
+    silent installation across machines.
+  tech: [C#, .NET, Windows]
+  repo: https://github.com/terellison/NVUpdateManager
+  featured: true
+
+- name: RegistryWrapper
+  description: >-
+    A type-safe library that wraps the Win32 registry API behind a clean,
+    idiomatic .NET interface. Available for both .NET Framework and .NET Core.
+  tech: [C#, .NET, Win32 API]
+  repo: https://github.com/terellison/RegistryWrapperCore
+  stars: 3
+  featured: true
+
+- name: Inlook
+  description: >-
+    A cross-platform email client that pairs a .NET MAUI frontend with a
+    Rust backend — exploring how managed UI and native performance fit
+    together.
+  tech: [.NET MAUI, Rust, C#]
+  repo: https://github.com/terellison/Inlook
+  stars: 1
+  featured: true
+
+- name: Xbox PC Porting Guide
+  description: >-
+    A technical guide and tooling for decompiling original Xbox titles and
+    porting them to run natively on Windows.
+  tech: [Python, Reverse Engineering]
+  repo: https://github.com/terellison/xbox-pc-porting-guide
+  featured: true
+
+- name: GameOfLife
+  description: >-
+    A .NET Windows Forms application that simulates Conway's Game of Life with
+    an interactive, configurable grid.
+  tech: [C#, .NET, WinForms]
+  repo: https://github.com/terellison/GameOfLife
+
+- name: PerfBuddy
+  description: >-
+    A lightweight C++ utility for monitoring system performance metrics.
+  tech: [C++]
+  repo: https://github.com/terellison/PerfBuddy
+
+- name: HashTable
+  description: >-
+    A generic hash table implementation in modern C++ with collision handling
+    and a small demo harness.
+  tech: [C++, Data Structures]
+  repo: https://github.com/terellison/HashTable
+  stars: 2
+
+- name: pong2D
+  description: >-
+    The classic game of Pong, built in Lua on top of the LÖVE (LOVE2D)
+    graphics framework.
+  tech: [Lua, LÖVE2D]
+  repo: https://github.com/terellison/pong2D

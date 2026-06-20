@@ -1,0 +1,122 @@
+// ---- Rouge syntax highlighting (theme-aware) ----------------
+:root {
+  --hl-comment: #6e7781;
+  --hl-keyword: #cf222e;
+  --hl-string: #0a3069;
+  --hl-number: #0550ae;
+  --hl-function: #8250df;
+  --hl-class: #953800;
+  --hl-variable: #24292f;
+  --hl-operator: #0550ae;
+  --hl-tag: #116329;
+}
+
+[data-theme="dark"] {
+  --hl-comment: #8b949e;
+  --hl-keyword: #ff7b72;
+  --hl-string: #a5d6ff;
+  --hl-number: #79c0ff;
+  --hl-function: #d2a8ff;
+  --hl-class: #ffa657;
+  --hl-variable: #c9d1d9;
+  --hl-operator: #79c0ff;
+  --hl-tag: #7ee787;
+}
+
+.highlight,
+.highlighter-rouge {
+  .c,
+  .cm,
+  .c1,
+  .cs,
+  .cd,
+  .cp {
+    color: var(--hl-comment);
+    font-style: italic;
+  }
+  .k,
+  .kc,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .kt {
+    color: var(--hl-keyword);
+  }
+  .s,
+  .sb,
+  .sc,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
+    color: var(--hl-string);
+  }
+  .m,
+  .mf,
+  .mh,
+  .mi,
+  .mo,
+  .il {
+    color: var(--hl-number);
+  }
+  .nf,
+  .fm {
+    color: var(--hl-function);
+  }
+  .nc,
+  .nn,
+  .bp {
+    color: var(--hl-class);
+  }
+  .n,
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    color: var(--hl-variable);
+  }
+  .o,
+  .ow {
+    color: var(--hl-operator);
+  }
+  .nt {
+    color: var(--hl-tag);
+  }
+  .na,
+  .nb,
+  .no,
+  .nd,
+  .ni,
+  .ne,
+  .nl,
+  .py {
+    color: var(--hl-class);
+  }
+  .err {
+    color: var(--hl-keyword);
+  }
+  .gi {
+    color: var(--hl-tag);
+  }
+  .gd {
+    color: var(--hl-keyword);
+  }
+  .gh,
+  .gu {
+    color: var(--hl-number);
+    font-weight: 600;
+  }
+}
+
+// Line numbers table (if used)
+.highlight .lineno {
+  color: var(--text-faint);
+  margin-right: 1rem;
+  user-select: none;
+}

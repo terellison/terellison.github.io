@@ -1,0 +1,16 @@
+# =============================================================
+#  Skills / tech stack (rendered on the homepage and /about/).
+#  Grouped by category. Inferred from project history — edit freely.
+# =============================================================
+
+- group: Languages
+  items: [C#, C++, Python, JavaScript, Rust, Lua, Java, SQL]
+
+- group: .NET Ecosystem
+  items: [.NET Core, .NET Framework, ASP.NET, .NET MAUI, WinForms, Entity Framework]
+
+- group: Platforms & Tooling
+  items: [Win32 API, DirectX 12, Node.js, Git, Docker, Linux]
+
+- group: Practices
+  items: [Backend Services, REST APIs, Data Structures, Code Ownership, Testing]

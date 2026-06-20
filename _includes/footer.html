@@ -1,41 +1,21 @@
-<footer class="footer">
-  <a class="footer_item" href="https://www.buymeacoffee.com/terellison">Buy me a coffee</a>
-  <a class="footer_item" href="https://1drv.ms/b/s!AvJaT4VtP7XDgs8dIKoB0hA-p5pzSw?e=tqzp0Q">Resumé</a>
-  <a class="footer_item" href="/feed.xml">RSS</a>
-  <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
-  <small class="footer_copyright">
-    <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
-    <a
-      href="https://github.com/piharpi/jekyll-klise"
-      target="_blank"
-      rel="noreferrer noopener"
-      >klisé</a
-    >
-    theme on
-    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener"
-      >jekyll</a
-    >
-  </small>
+<footer class="site-footer">
+  <div class="wrapper wrapper--wide">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        &copy; {{ site.time | date: "%Y" }} {{ site.author.name }} ·
+        Built with <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> ·
+        <a href="{{ site.repo }}" target="_blank" rel="noopener">Source</a>
+      </div>
+      <div class="footer-social">
+        {%- for link in site.data.social -%}
+          <a
+            class="icon-btn"
+            href="{{ link.url }}"
+            aria-label="{{ link.name }}"
+            {% unless link.url contains "mailto" %}target="_blank" rel="noopener"{% endunless %}
+          >{% include icon.html name=link.icon %}</a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
 </footer>
-<script src="/assets/js/main.js" defer="defer"></script>
-{%- if site.google_analytics -%}
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', "{{ site.google_analytics }}");
-</script>
-{%- endif -%}
-{%- if page.url == '/archive/' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}

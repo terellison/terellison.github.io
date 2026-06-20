@@ -1,94 +1,96 @@
-# Site settings
-title: dev.terellison.net | Terry Ellison # site title
-description: >- # site description
-  Technical blog and portfolio of Terry Ellison
-lang: en-US # default lang
-timezone: America/New_York # set your timezone
-#image:  # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/terellison/terellison.github.io # site repo [optional]
-mode: dark # default theme "dark" | "light"
+# ======================= Site settings =======================
+title: Terry Ellison
+description: >-
+  Portfolio and technical blog of Terry Ellison — a software developer
+  focused on backend .NET and dependable systems.
+lang: en-US
+timezone: America/New_York
+repo: https://github.com/terellison/terellison.github.io
 
-# Profile settings
+# Default color theme: "light" or "dark".
+# Visitors' system preference and their saved choice take precedence.
+mode: light
+
+# ======================= Profile =============================
 author:
-  name: Terry Ellison # author name
-  bio: >- # 
-    Hello! I'm a software developer originating from St. Petersburg, Florida.
-    Professionally, I currently specialize in bacekend .NET Core / Framework / Whatever Microsoft calls it as of the time you are reading this.
-    I'm extremely passionate about learning and taking ownership of code.
+  name: Terry Ellison
+  bio: >-
+    Hello! I'm a software developer from St. Petersburg, Florida. I currently
+    specialize in backend development across the .NET ecosystem — C#, .NET Core,
+    and .NET Framework. I'm passionate about learning, clean design, and taking
+    full ownership of the code I ship.
   bio-short: >-
-    Software developer who loves solving complex problems with robust and reliable solutions.
-  username: terellison # general username
-  github: terellison # github username
-  #twitter: twitter_username # twitter username
-  #facebook: facebook_username # facebook username
-  email: ellisonterry4@gmail.com # email adress
-  avatar: /assets/img/headshot.jpeg # change with your own avatar
+    Backend-focused software developer who loves solving complex problems with
+    robust, reliable solutions.
+  username: terellison
+  github: terellison
+  email: ellisonterry4@gmail.com
+  avatar: /assets/img/headshot.jpeg
 
-# URL settings
-url: "https://dev.terellison.net" #
-baseurl:
-permalink: /:title/
+# ======================= URLs ================================
+url: "https://dev.terellison.net"
+baseurl: ""
+permalink: /blog/:title/
 google_analytics: G-1YY1LGYC19
-#fb_appid:
 
-# Collection settings
+# ======================= Collections ========================
 collections:
   posts:
     output: true
 
-# Markdown settings
+# ======================= Markdown ===========================
 markdown: kramdown
 highlighter: rouge
+excerpt_separator: "<!--more-->"
 kramdown:
   syntax_highlighter: rouge
+  input: GFM
 
-# Default front matter
+# ======================= Defaults ===========================
 defaults:
   - scope:
       path: ""
+      type: posts
     values:
       layout: post
       comments: false
 
-# Jekyll Compose default front matter
-jekyll_compose:
-  post_default_front_matter:
-    modified:
-    tags: []
-    description:
-  draft_default_front_matter:
-    modified:
-    tags: []
-    description:
-
-# Homepage limit posts
+# How many recent posts to show on the homepage.
 number_of_posts: 5
 
-# Build settings
-# theme: klise
+# ======================= Authoring ==========================
+# `bundle exec jekyll post "My Title"` scaffolds a new post with this
+# front matter. See AUTHORING.md for the full workflow.
+jekyll_compose:
+  auto_open: false
+  default_front_matter:
+    posts:
+      layout: post
+      description:
+      tags: []
+    drafts:
+      layout: post
+      description:
+      tags: []
+
+# ======================= Build ==============================
 sass:
   style: compressed
+  sass_dir: _sass
 
-include:
-  - _redirects
-  - .htaccess
-
-exclude:
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - CHANGELOG.md
-  - README.md
-  - node_modules
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - lighthouse.png
-  - klise-*.gem
-  - klise.gemspec
-
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - AUTHORING.md
+  - klise.gemspec
+  - now.json
+  - vendor
+  - node_modules
+  - .github

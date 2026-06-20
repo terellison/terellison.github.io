@@ -1,0 +1,17 @@
+# Social / contact links shown in the nav, footer, and about page.
+# `icon` maps to an SVG in _includes/icon.html
+- name: GitHub
+  icon: github
+  url: https://github.com/terellison
+
+- name: LinkedIn
+  icon: linkedin
+  url: https://www.linkedin.com/in/terry-ellison-9a8383139/
+
+- name: Email
+  icon: mail
+  url: mailto:ellisonterry4@gmail.com
+
+- name: RSS
+  icon: rss
+  url: /feed.xml

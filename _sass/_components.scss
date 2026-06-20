@@ -1,0 +1,461 @@
+// ---- Buttons ------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: $radius-sm;
+  font-size: $step--1;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.05s ease, color 0.15s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+
+  &:hover {
+    background: var(--accent-hover);
+    color: #fff;
+  }
+}
+
+.btn--ghost {
+  border-color: var(--border-strong);
+  color: var(--text);
+
+  &:hover {
+    background: var(--surface-hover);
+    border-color: var(--text-faint);
+    color: var(--text);
+  }
+}
+
+// ---- Hero ---------------------------------------------------
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0 1.5rem;
+
+  @include media($bp-md) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: $step--1;
+  font-weight: 550;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+  }
+}
+
+.hero__title {
+  font-size: $step-5;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+
+  @include media($bp-md) {
+    font-size: $step-4;
+  }
+
+  .accent {
+    color: var(--accent);
+  }
+}
+
+.hero__lede {
+  font-size: $step-1;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.hero__avatar {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+
+  @include media($bp-md) {
+    width: 104px;
+    height: 104px;
+    order: -1;
+  }
+}
+
+// ---- Card base ----------------------------------------------
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: $radius;
+  padding: 1.5rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+a.card:hover,
+.card--link:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+// ---- Project card -------------------------------------------
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.project-card__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.project-card__links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.project-card__links a {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-sm;
+  color: var(--text-faint);
+
+  &:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+  }
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.project-card__title {
+  font-size: $step-1;
+  margin-bottom: 0.4rem;
+}
+
+.project-card__desc {
+  color: var(--text-muted);
+  font-size: $step--1;
+  margin-bottom: 1.1rem;
+  flex: 1 0 auto;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-tag {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.project-card__star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  font-family: $font-mono;
+
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+// ---- Post card / list ---------------------------------------
+.post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+
+  &:hover .post-row__title {
+    color: var(--accent);
+  }
+
+  @include media($bp-sm) {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+.post-row__date {
+  font-size: $step--1;
+  color: var(--text-faint);
+  font-family: $font-mono;
+  padding-top: 0.15rem;
+}
+
+.post-row__title {
+  font-size: $step-1;
+  margin-bottom: 0.35rem;
+  transition: color 0.15s ease;
+}
+
+.post-row__excerpt {
+  color: var(--text-muted);
+  font-size: $step--1;
+  margin-bottom: 0.6rem;
+}
+
+// ---- Tags ---------------------------------------------------
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-right: 0.35rem;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.tag-cloud a {
+  font-family: $font-mono;
+  font-size: $step--1;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+
+  &:hover,
+  &.is-active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+}
+
+// ---- Skills -------------------------------------------------
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @include media($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-group__label {
+  font-size: $step--1;
+  font-weight: 650;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+}
+
+// ---- Timeline (experience / education) ----------------------
+.timeline {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 1.75rem 1.75rem;
+  border-left: 2px solid var(--border);
+
+  &:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+}
+
+.timeline-item__period {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timeline-item__role {
+  font-size: $step-1;
+  margin: 0.25rem 0 0.1rem;
+}
+
+.timeline-item__org {
+  font-size: $step--1;
+  color: var(--accent);
+  font-weight: 550;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item__detail {
+  color: var(--text-muted);
+  font-size: $step--1;
+  margin: 0;
+}
+
+// ---- Search box (blog) --------------------------------------
+.search-box {
+  position: relative;
+  margin-bottom: 1.75rem;
+
+  svg {
+    position: absolute;
+    left: 0.95rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--text-faint);
+    pointer-events: none;
+  }
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.6rem;
+  border-radius: $radius-sm;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: $step-0;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+}
+
+#search-results:not(:empty) {
+  margin: 0 0 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+// ---- Callout (404 / empty states) ---------------------------
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-muted);
+
+  h1 {
+    font-size: $step-5;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// ---- Year heading (archive) ---------------------------------
+.year-head {
+  font-family: $font-mono;
+  font-size: $step-1;
+  color: var(--text-faint);
+  margin: 2rem 0 0.5rem;
+  font-weight: 600;
+}

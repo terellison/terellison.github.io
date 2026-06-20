@@ -1,0 +1,54 @@
+<header class="site-header" id="site-header">
+  <div class="wrapper wrapper--wide">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="{{ '/' | relative_url }}">
+        <span class="nav-brand__mark">TE</span>
+        <span>Terry Ellison</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        {%- assign current = page.url -%}
+        {%- for item in site.data.menus -%}
+          {%- assign is_active = false -%}
+          {%- if item.url == "/" and current == "/" -%}{%- assign is_active = true -%}{%- endif -%}
+          {%- if item.url != "/" and current contains item.url -%}{%- assign is_active = true -%}{%- endif -%}
+          <li>
+            <a
+              class="nav-link{% if is_active %} is-active{% endif %}"
+              href="{{ item.url | relative_url }}"
+              {% if item.external %}target="_blank" rel="noopener"{% endif %}
+            >{{ item.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="nav-actions">
+        <a
+          class="icon-btn"
+          href="https://github.com/{{ site.author.github }}"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+        >{% include icon.html name="github" %}</a>
+
+        <button
+          class="icon-btn theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle color theme"
+        >
+          {% include icon.html name="sun" %}
+          {% include icon.html name="moon" %}
+        </button>
+
+        <button
+          class="icon-btn nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >{% include icon.html name="menu" %}</button>
+      </div>
+    </nav>
+  </div>
+</header>
