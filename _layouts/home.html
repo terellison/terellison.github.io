@@ -37,7 +37,20 @@ wide: true
       All projects {% include icon.html name="arrow-right" %}
     </a>
   </div>
-  <div class="grid grid--2">
+  {%- comment -%}
+    The cards below are rendered server-side from projects flagged
+    `featured: true` in _data/projects.yml. They are the no-JS fallback.
+    assets/js/pinned-projects.js progressively replaces them at runtime with
+    the repositories currently pinned on the GitHub profile (fetched from a
+    CORS-enabled proxy and cached in localStorage).
+  {%- endcomment -%}
+  <div
+    class="grid grid--2"
+    id="featured-projects"
+    data-github-user="{{ site.author.github }}"
+    data-pinned-endpoint="{{ site.pinned_repos.endpoint }}"
+    data-pinned-ttl="{{ site.pinned_repos.cache_minutes }}"
+  >
     {%- for project in site.data.projects -%}
       {%- if project.featured -%}
         {% include project-card.html project=project %}
@@ -82,3 +95,5 @@ wide: true
     {%- endfor -%}
   </div>
 </section>
+
+<script src="{{ '/assets/js/pinned-projects.js' | relative_url }}" defer></script>
