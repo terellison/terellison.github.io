@@ -34,5 +34,6 @@ gem "webrick", "~> 1.7"
 
 # Ruby 3.4+ removed these from the default gems, but Jekyll still needs them.
 gem "csv"
+gem "bigdecimal"
 gem "base64"
 gem "logger"
