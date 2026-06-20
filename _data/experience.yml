@@ -13,10 +13,10 @@ work:
     org: Electronic Arts · Orlando, FL
     bullets:
       - Developing tools and supporting developer workflows for an unannounced game project, supporting a team of 150+.
+      - Designed, implemented, and owned the project's code outsourcing pipeline — auditing the codebase, coordinating with teams across EA to determine code sharability, pre-building restricted code into DLLs, and authoring the technical documentation for external partners.
       - Implementing developer-focused features across multiple domains in C++.
       - Executing and supporting Frostbite engine upgrades.
       - Building automation with Horde alongside internal toolsets.
-      - Coordinating with teams across Electronic Arts on cross-cutting workflow features.
 
   - period: Oct 2021 — Jul 2024
     role: Software Engineer
