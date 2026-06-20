@@ -61,6 +61,18 @@ defaults:
 # How many recent posts to show on the homepage.
 number_of_posts: 5
 
+# ======================= Pinned repos =======================
+# The homepage "Featured Projects" section is upgraded at runtime to mirror
+# the repositories pinned on the GitHub profile. Pinned items aren't exposed
+# by GitHub's CORS-enabled REST API, so the browser reads them from a small
+# public proxy that returns JSON. Results are cached in localStorage.
+# Swap `endpoint` if the proxy ever goes away ({user} is replaced with
+# author.github). Set endpoint to "" to disable and always show the static
+# `featured: true` projects from _data/projects.yml.
+pinned_repos:
+  endpoint: "https://gh-pinned-repos.egoist.dev/?username={user}"
+  cache_minutes: 360
+
 # ======================= Authoring ==========================
 # `bundle exec jekyll post "My Title"` scaffolds a new post with this
 # front matter. See AUTHORING.md for the full workflow.
