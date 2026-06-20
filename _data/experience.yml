@@ -1,40 +1,54 @@
 # =============================================================
 #  Experience & education timelines (rendered on /about/).
 #
-#  NOTE: The education entries below are inferred from public
-#  repository history on GitHub (course codes, internship repos,
-#  lab projects). Please verify dates/titles and edit freely.
-#  The work entry is a placeholder — fill in your real role.
+#  Sources: St. Petersburg College's public profile of Terry
+#  Ellison + LinkedIn headline. LinkedIn blocks automated access,
+#  so a few specifics are marked TODO — please confirm/fill in:
+#    - EA Sports: exact job title and start date
+#    - Microsoft/Xbox: employment date range
+#    - Whether Full Sail / FIU belong here (see commented entries)
 #
 #  Each item: period, role, org, detail (optional)
 # =============================================================
 
 work:
-  - period: Present
-    role: Backend Software Developer
-    org: "" # TODO: add your employer
+  - period: Present # TODO: confirm start year, e.g. "2021 — Present"
+    role: Software Engineer # TODO: confirm exact title at EA Sports
+    org: EA Sports (Electronic Arts)
     detail: >-
-      Building and maintaining backend services in the .NET ecosystem
-      (C# / .NET Core / .NET Framework), with a focus on robust, reliable
-      systems and taking end-to-end ownership of code.
+      Working on game engine development and testing, alongside backend
+      services across the .NET ecosystem (C# / .NET Core / .NET Framework).
+
+  - period: 2019 # TODO: confirm date range
+    role: Software Test Engineer (Contractor)
+    org: Microsoft · Xbox Game Development
+    detail: >-
+      Validated new titles on the Xbox game development team — writing
+      programs that automatically exercised games, in addition to hands-on
+      manual QA.
 
 education:
-  - period: 2024 — Present
-    role: Computer Science
-    org: Florida International University
-    detail: >-
-      Coursework in data structures, algorithms, and discrete mathematics.
-
-  - period: 2022
-    role: Software & Game Development
-    org: Full Sail University
-    detail: >-
-      Studied systems and graphics programming in C++ — including DirectX 12,
-      Unreal Engine, and low-level Windows development.
-
   - period: 2018
-    role: Computer Programming Internship
+    role: A.S., Computer Programming and Analysis
     org: St. Petersburg College
     detail: >-
-      Built TechRequest, a Python help-desk application, as part of a summer
-      computer programming internship.
+      Graduated December 2018. Served as a Computer Programming Tutor and
+      led the Programming Club, organizing meetings and lectures for CS
+      students.
+
+  # The two entries below are INFERRED from GitHub repo history
+  # (Full Sail lab projects in 2022; FIU course codes in 2024) and are
+  # NOT yet verified. Uncomment and edit if they're accurate, or delete.
+  #
+  # - period: 2024 — Present
+  #   role: Computer Science
+  #   org: Florida International University
+  #   detail: >-
+  #     Coursework in data structures, algorithms, and discrete mathematics.
+  #
+  # - period: 2022
+  #   role: Software & Game Development
+  #   org: Full Sail University
+  #   detail: >-
+  #     Systems and graphics programming in C++ — DirectX 12, Unreal Engine,
+  #     and low-level Windows development.
