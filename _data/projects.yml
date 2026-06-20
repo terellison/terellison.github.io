@@ -9,7 +9,10 @@
 #    repo        – GitHub URL (optional)
 #    demo        – live demo / homepage URL (optional)
 #    stars       – GitHub star count (optional, shown as a badge)
-#    featured    – true to surface on the homepage
+#    featured    – fallback flag: surfaces on the homepage only when the
+#                  live pinned-repository data isn't available. The homepage
+#                  normally mirrors the repos pinned on the GitHub profile
+#                  (see scripts/fetch-pinned.sh and _data/pinned.json).
 # =============================================================
 
 - name: NVUpdateManager

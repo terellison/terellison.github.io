@@ -4,6 +4,9 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  # Rebuild daily so the homepage picks up changes to pinned repositories.
+  schedule:
+    - cron: "0 6 * * *"
 
 # Allow the workflow to publish to GitHub Pages.
 permissions:
@@ -32,6 +35,12 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      - name: Fetch pinned repositories
+        run: scripts/fetch-pinned.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: ${{ github.repository_owner }}
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

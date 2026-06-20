@@ -5,3 +5,6 @@ _site/
 _drafts
 klise-*.gem
 Gemfile.lock
+
+# Generated at build time by scripts/fetch-pinned.sh
+_data/pinned.json

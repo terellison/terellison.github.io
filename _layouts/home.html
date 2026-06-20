@@ -38,11 +38,22 @@ wide: true
     </a>
   </div>
   <div class="grid grid--2">
-    {%- for project in site.data.projects -%}
-      {%- if project.featured -%}
+    {%- comment -%}
+      Prefer repositories pinned on GitHub (_data/pinned.json, generated at
+      build time by scripts/fetch-pinned.sh). Fall back to projects flagged
+      `featured: true` in projects.yml when that data isn't available.
+    {%- endcomment -%}
+    {%- if site.data.pinned and site.data.pinned.size > 0 -%}
+      {%- for project in site.data.pinned -%}
         {% include project-card.html project=project %}
-      {%- endif -%}
-    {%- endfor -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- for project in site.data.projects -%}
+        {%- if project.featured -%}
+          {% include project-card.html project=project %}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
   </div>
 </section>
 
