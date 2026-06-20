@@ -12,10 +12,10 @@ work:
     role: Tools Software Engineer II
     org: Electronic Arts · Orlando, FL
     bullets:
-      - Developing tools and supporting developer workflows for an unannounced game project, supporting a team of 100+.
-      - Implementing gameplay features across multiple domains in C++.
+      - Developing tools and supporting developer workflows for an unannounced game project, supporting a team of 150+.
+      - Implementing developer-focused features across multiple domains in C++.
       - Executing and supporting Frostbite engine upgrades.
-      - Building automation with Jenkins alongside internal toolsets.
+      - Building automation with Horde alongside internal toolsets.
       - Coordinating with teams across Electronic Arts on cross-cutting workflow features.
 
   - period: Oct 2021 — Jul 2024
@@ -30,7 +30,7 @@ work:
 
   - period: Mar 2021 — Oct 2021
     role: Application Developer
-    org: Tech Data Corporation · Clearwater, FL
+    org: Tech Data Corporation · Remote
     bullets:
       - Built a Business-to-Business marketplace platform with full-stack web development.
       - Led Scrum/Agile ceremonies and stood in for the lead developer on planning and progress reviews.
@@ -49,7 +49,7 @@ education:
     role: B.S. Computer Science
     org: Western Governors University
 
-  - period: Awarded after leaving the program
+  - period: Feb 2023
     role: Certificate, Computer Science
     org: Full Sail University
 
