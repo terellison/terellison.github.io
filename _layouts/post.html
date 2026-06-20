@@ -24,7 +24,8 @@ layout: default
     {%- if page.tags and page.tags != empty -%}
     <div class="article-header__tags">
       {%- for tag in page.tags -%}
-      <a class="tag-pill" href="{{ '/tags/#' | append: tag | slugify | relative_url }}">{{ tag }}</a>
+      {%- assign tag_slug = tag | slugify -%}
+      <a class="tag-pill" href="{{ '/tags/' | append: '#' | append: tag_slug | relative_url }}">{{ tag }}</a>
       {%- endfor -%}
     </div>
     {%- endif -%}
